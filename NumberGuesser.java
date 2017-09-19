@@ -5,13 +5,11 @@ public class NumberGuesser
 {
   public static void main(String[] args)
   {
-    int number = (int)(Math.random() * 100) + 1; // generates random number
-    
-    //System.out.println("NumberL " + number);
+    int number = (int)(Math.random() * 100) + 1;
     
     Scanner in = new Scanner(System.in);
     
-    int counter = 0; // guess counter
+    int counter = 0;
     int sentinel;
     sentinel = -1; // if user inputs the sentinel, game will be aborted
     
@@ -20,48 +18,46 @@ public class NumberGuesser
     
     while (win == !true) // Starts the game
     {
-      System.out.println ("Enter a whole number between 1 and 100. To exit, enter -1 "); // prompts user for number
-      int guess = in.nextInt(); // the user's guess
+      System.out.println ("Enter a whole number between 1 and 100. To exit, enter -1 ");
+      int guess = in.nextInt(); // prompts user for their guess
       
-      if (guess == sentinel) // if the user wants to abort the program
+      if (guess == sentinel)
       {
         System.out.println ("You have ended the game.");
         win = true;
-        System.out.println ("Want to play again? (y/n)"); // asks user to play again
+        System.out.println ("Want to play again? (y/n)");
         
         String answer = "";
         answer = in.next();
-        if (answer.equals("y") || answer.equals("Y")) // asks user if they want to play again
+        if (answer.equals("y") || answer.equals("Y"))
         {
-          number = (int)(Math.random() * 100) + 1; // generates random number
-          //System.out.println("NumberL " + number);
+          number = (int)(Math.random() * 100) + 1;
           win = false;
         }
-        else if (answer.equals("n") || answer.equals("N")) // asks user if they want to play again
+        else if (answer.equals("n") || answer.equals("N"))
         {
-          System.out.println ("Thanks for Playing!"); // end of game
+          System.out.println ("Thanks for Playing!");
         }
         
       }
-      else if (guess == number) // if the user guess is correct
+      else if (guess == number)
       {
         counter++;
         win = true;
-        System.out.println("That's Right. You guessed this many times: " + counter); // shows user is correct with number of tries
-        System.out.println ("Want to play again? (y/n)"); // asks user to play again
+        System.out.println("That's Right. You guessed this many times: " + counter);
+        System.out.println ("Want to play again? (y/n)");
         
         String answer = "";
         answer = in.next();
-        if (answer.equals("y") || answer.equals("Y")) // asks user if they want to play again
+        if (answer.equals("y") || answer.equals("Y"))
         {
-          number = (int)(Math.random() * 100) + 1; // generates random number
-        //  System.out.println("NumberL " + number);
+          number = (int)(Math.random() * 100) + 1;
           win = false;
           counter = 0;
         }
-        else if (answer.equals("n") || answer.equals("N")) // asks user if they want to play again
+        else if (answer.equals("n") || answer.equals("N"))
         {
-          System.out.println ("Thanks for Playing!"); // end of game
+          System.out.println ("Thanks for Playing!");
         }
       }
       
@@ -75,10 +71,6 @@ public class NumberGuesser
         System.out.println("Too low");
         counter++;
       }
-    }
-  }
+    } //end of while loop
+  } // end of main
 }
-
-  
-
-      
